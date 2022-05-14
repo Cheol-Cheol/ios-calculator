@@ -8,7 +8,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-.calculator {
+#calculator {
   background: black;
   width: 300px;
   height: 600px;
