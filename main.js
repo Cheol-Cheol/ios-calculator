@@ -3,6 +3,8 @@ let left = null,
   right = null;
 
 const inputNum = (num) => {
+  const clearEl = document.querySelector(".clear");
+  clearEl.textContent = "C";
   const inpEl = document.querySelector(".inp");
   if (oper === null) {
     if (left === null) {
@@ -17,4 +19,15 @@ const inputNum = (num) => {
   }
   console.log("left:", left);
   console.log("right:", right);
+};
+
+const inputOper = (op) => {};
+
+const clearBtn = () => {
+  const clearEl = document.querySelector(".clear");
+  const inpEl = document.querySelector(".inp");
+
+  clearEl.textContent = "AC";
+  inpEl.value = "";
+  (left = null), (oper = null), (right = null);
 };
