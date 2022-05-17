@@ -1,6 +1,7 @@
 let left = null,
   oper = null,
-  right = null;
+  right = null,
+  result = null;
 
 // 숫자 입력
 const inputNum = (num) => {
@@ -16,8 +17,6 @@ const inputNum = (num) => {
       right = `${num}`;
     } else right += num;
   }
-  console.log("left:", left);
-  console.log("right:", right);
   render();
 };
 
@@ -28,6 +27,31 @@ const render = () => {
   } else {
     inpEl.value = right;
   }
+  if (result !== null) {
+    inpEl.value = result;
+    left = result;
+    oper = null;
+    right = null;
+    result = null;
+  }
+};
+
+const inputEqu = () => {
+  switch (oper) {
+    case "+":
+      result = parseInt(left) + parseInt(right);
+      break;
+    case "-":
+      result = parseInt(left) - parseInt(right);
+      break;
+    case "*":
+      result = parseInt(left) * parseInt(right);
+      break;
+    case "/":
+      result = parseInt(left) / parseInt(right);
+      break;
+  }
+  render();
 };
 
 const inputOper = (op) => {
